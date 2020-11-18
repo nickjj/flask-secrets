@@ -39,6 +39,6 @@ jobs:
           diff <(wc default_results) <(echo "  30   30 3140 default_results")
 
           flask secrets --length 55 --count 1 --prefix "" > custom_results
-          diff <(wc custom_results) <(echo "  1  1 56 custom_results")
+          diff <(wc custom_results) <(echo " 1  1 56 custom_results")
         env:
           FLASK_APP: "example.app"
