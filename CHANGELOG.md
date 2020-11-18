@@ -15,5 +15,5 @@ Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Everything!
 
-[Unreleased]: https://github.com/nickjj/flask-secrets/compare/0.0.1...HEAD
-[0.1.0]: https://github.com/nickjj/flask-secrets/releases/tag/0.0.1
+[Unreleased]: https://github.com/nickjj/flask-secrets/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/nickjj/flask-secrets/releases/tag/0.1.0
