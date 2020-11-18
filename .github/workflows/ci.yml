@@ -23,8 +23,9 @@ jobs:
           pip3 install flake8
           flake8 .
 
-      - name: "Install package from source"
+      - name: "Install dependencies and local package"
         run: |
+          pip3 install Flask==1.1.2
           make install
 
       - name: "Ensure secrets are generated"
