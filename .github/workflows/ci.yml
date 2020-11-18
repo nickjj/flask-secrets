@@ -1,0 +1,43 @@
+name: "CI"
+
+on:
+  pull_request: {}
+  push:
+    branches:
+      - "master"
+
+jobs:
+  test:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: "actions/checkout@v2"
+
+      - name: "Set up Python 3.8"
+        uses: "actions/setup-python@v1"
+        with:
+          python-version: "3.8"
+
+      - name: "Lint extension"
+        run: |
+          pip3 install flake8
+          flake8 .
+
+      - name: "Install package from source"
+        run: |
+          make install
+
+      - name: "Ensure secrets are generated"
+        run: |
+          cd tests/example_app
+
+          flask secrets > default_results
+          grep -q dev_ default_results
+          grep -q test_ default_results
+          grep -q prod_ default_results
+          diff <(wc default_results) <(echo "  30   30 3140 default_results")
+
+          flask secrets --length 55 --count 1 --prefix "" > custom_results
+          diff <(wc custom_results) <(echo "  1  1 56 custom_results")
+        env:
+          FLASK_APP: "example.app"
