@@ -25,8 +25,8 @@ auth tokens or whatever else you need secret tokens for.
 
 That's it!
 
-There's no need to even initialize anything in your Flask app because it's just
-a CLI command that gets added to your Flask app.
+There's no need to even import or initialize anything in your Flask app because
+it's just a CLI command that gets added to your Flask app.
 
 *But if you're curious, a complete example Flask app can be found in the
 [tests/
@@ -144,7 +144,7 @@ type of prefix.
 ### Why did you generate 10 tokens for each prefix?
 
 Most real world applications will require having at least a `SECRET_KEY`, 
-PostgreSQL password and maybe a Redis password.
+PostgreSQL password and maybe a Redis password too.
 
 That puts us at needing at least 3 tokens. If you happen to be doing client
 work you might find yourself creating additional passwords for various services
@@ -162,8 +162,8 @@ tokens you want.
 It's what Stripe uses when generating their API keys. When it comes to security,
 the last thing you want to do is guess at stuff or undershoot the length.
 
-Chances are they put in a lot of thought into that value and 99 characters
-should not be crackable for many trillions of years!
+Chances are they put a lot of thought into that value and 99 chars should not
+be crackable for many trillions of years!
 
 If you use a prefix, it really comes out to be 99 + the prefix's length too.
 The prefix gets prepended to the token after it's been generated with whatever
