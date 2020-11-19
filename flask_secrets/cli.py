@@ -32,4 +32,4 @@ def secrets(length, count, prefix):
 
 def random_token(prefix, length=TOKEN_LENGTH):
     token = ''.join(choice(TOKEN_CHARSET) for i in range(length))
-    return f"{prefix}{token}"
+    return f'{prefix}{token}'
