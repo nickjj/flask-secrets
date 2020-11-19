@@ -1,7 +1,7 @@
 # What is Flask-Secrets? ![CI](https://github.com/nickjj/flask-secrets/workflows/CI/badge.svg?branch=master)
 
-It's a Flask extension that makes it easy to generate secure secret keys and
-tokens.
+It's a Flask CLI extension that makes it easy to generate secure secret keys
+and tokens.
 
 After installing it you'll be able to run `flask secrets` to generate a number
 of tokens that you can use for your `SECRET_KEY`, database passwords, API keys,

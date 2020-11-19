@@ -7,7 +7,7 @@ setup(
     author='Nick Janetakis',
     author_email='nick.janetakis@gmail.com',
     url='https://github.com/nickjj/flask-secrets',
-    description='A Flask extension to generate random secret tokens.',
+    description='A Flask CLI extension to generate random secret tokens.',
     license='MIT',
     long_description=__doc__,
     packages=['flask_secrets'],
